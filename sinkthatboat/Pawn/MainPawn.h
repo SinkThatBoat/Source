@@ -41,6 +41,6 @@ public:
 	EPlayerEnum _PlayerType;
 
 	UFUNCTION(BlueprintCallable)
-	static int32 GetPlayerNumber();
+	int32 GetPlayerNumber();
 	
 };
