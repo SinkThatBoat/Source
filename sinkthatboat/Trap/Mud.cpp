@@ -42,9 +42,9 @@ void AMud::Tick(float DeltaTime) {
 void AMud::minimize() {
 	FVector v = GetActorScale3D();
 
-	v.X /= 1.1f;
-	v.Y /= 1.1f;
-	v.Z /= 1.1f;
+	v.X /= 1.01f;
+	v.Y /= 1.01f;
+	v.Z /= 1.01f;
 
 	SetActorScale3D(v);
 
