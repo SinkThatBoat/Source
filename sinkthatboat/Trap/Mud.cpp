@@ -45,7 +45,8 @@ void AMud::minimize() {
 	v.X /= 1.1f;
 	v.Y /= 1.1f;
 	v.Z /= 1.1f;
-	DEBUG("Rétréci");
+
+	SetActorScale3D(v);
 
 	if (v.X < 0.1)
 		Destroy();
