@@ -11,7 +11,7 @@ APitfall::APitfall() {
 
 
 // Called every frame
-void APitfall::Tick(float DeltaTime) override {
+void APitfall::Tick(float DeltaTime) {
 	
 	//Catch all the overlapped animals
 	TArray<AActor*> Actors;
