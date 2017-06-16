@@ -44,7 +44,7 @@ public:
 
 	//Set the walking's speed
 	UFUNCTION(BlueprintCallable)
-		void setSpeed(const int32 Speed);
+		void setSpeed(const int32 Speed, const bool applyChange = true);
 
 	//Get weight
 	UFUNCTION(BlueprintCallable)

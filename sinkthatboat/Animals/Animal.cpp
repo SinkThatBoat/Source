@@ -26,7 +26,7 @@ void AAnimal::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	//Change the speed if we're in the mud
-	setSpeed(_Mud ? _Speed / 2 : _Speed);
+	setSpeed(_Mud ? _Speed / 2 : _Speed, false);
 
 	//Check if we're in the mud
 	if (_Mud) {
@@ -76,9 +76,11 @@ void AAnimal::stopWalking() {
 }
 
 //Set the animal's speed
-void AAnimal::setSpeed(int32 Speed) {
+void AAnimal::setSpeed(int32 Speed, bool applyChange) {
 	GetCharacterMovement()->MaxWalkSpeed = Speed * 70;
-	_Speed = Speed;
+
+	if(applyChange)
+		_Speed = Speed;
 }
 
 //Destroy the animal
