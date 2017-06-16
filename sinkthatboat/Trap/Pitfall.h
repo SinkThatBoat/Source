@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "../Animal/Chicken.h"
 #include "Trap/Trap.h"
 #include "Pitfall.generated.h"
 
