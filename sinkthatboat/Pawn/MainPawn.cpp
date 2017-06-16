@@ -47,7 +47,5 @@ void AMainPawn::spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, A
 
 //Return the number of player on the server
 int32 AMainPawn::GetPlayerNumber() {
-	TArray<AMainPawn*> Players;
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AMainPawn::StaticClass(), Players);
-	return Players.Num();
+	return GetWorld()->GetAuthGameMode()->NumPlayers;
 }
