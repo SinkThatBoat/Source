@@ -72,7 +72,8 @@ void AAnimal::kill() {
 
 //Stop the animal from walking
 void AAnimal::stopWalking() {
-	DisableInput(GetWorld()->GetFirstPlayerController());
+	//DisableInput(GetWorld()->GetFirstPlayerController());
+	GetCharacterMovement()->MaxWalkSpeed = 0;
 }
 
 //Set the animal's speed
