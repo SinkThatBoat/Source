@@ -44,3 +44,4 @@ void AMainPawn::spawnAnimal_Implementation(EAnimalEnum Animal, FTransform Transf
 	Overridable in blueprint
 */
 void AMainPawn::spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, AActor *Tsunami) {}
+
