@@ -40,7 +40,5 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
 	EPlayerEnum _PlayerType;
 
-	UFUNCTION(BlueprintCallable)
-	int32 GetPlayerNumber();
 	
 };
