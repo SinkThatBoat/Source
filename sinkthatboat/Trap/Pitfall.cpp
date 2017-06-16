@@ -15,7 +15,7 @@ void APitfall::Tick(float DeltaTime) {
 	
 	//Catch all the animals
 	TArray<AActor*> Actors;
-	getOverlappingActors(Actors);
+	GetOverlappingActors(Actors);
 
 	for (auto& Actor : Actors) {
 		AAnimal *Animal = Cast<AAnimal>(Actor);

@@ -16,8 +16,7 @@ class SINKTHATBOAT_API APitfall : public ATrap
 public:
 	APitfall();
 
-private:
-	UFUNCTION(BlueprintCallable)
-	void throwPitfall();
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 
 };
