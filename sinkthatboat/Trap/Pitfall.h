@@ -15,6 +15,9 @@ class SINKTHATBOAT_API APitfall : public ATrap
 	
 public:
 	APitfall();
-	virtual void resetCooldown();
+
+private:
+	UFUNCTION(BlueprintCallable)
+	void throwPitfall();
 
 };
