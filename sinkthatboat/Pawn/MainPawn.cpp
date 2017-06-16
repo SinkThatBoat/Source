@@ -44,8 +44,3 @@ void AMainPawn::spawnAnimal_Implementation(EAnimalEnum Animal, FTransform Transf
 	Overridable in blueprint
 */
 void AMainPawn::spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, AActor *Tsunami) {}
-
-//Return the number of player on the server
-int32 AMainPawn::GetPlayerNumber() {
-	return GetWorld()->GetAuthGameMode()->GetNumPlayers();
-}
