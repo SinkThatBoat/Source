@@ -45,6 +45,7 @@ void AMud::minimize() {
 	v.X /= 1.1f;
 	v.Y /= 1.1f;
 	v.Z /= 1.1f;
+	DEBUG("Rétréci");
 
 	if (v.X < 0.1)
 		Destroy();
