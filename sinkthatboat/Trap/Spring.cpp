@@ -7,8 +7,9 @@ void ASpring::throwAnimals() {
 	TArray<AActor*> Actors;
 	GetOverlappingActors(Actors);
 
-	for (int32 i = 0; i < Actors.Num(); ++i) {
-		AAnimal *Animal = Cast<AAnimal>(Actors[i]);
+	for (auto& Actor : Actors) {
+		AAnimal *Animal = Cast<AAnimal>(Actors);
+
 		//Doesn't launch elephants & traps
 		if (Animal && !Cast<AElephant>(Animal)) {
 			Animal->GetMovementComponent()->StopMovementImmediately();
