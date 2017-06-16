@@ -10,7 +10,6 @@ AMainPawn::AMainPawn() {
  	// Set this pawn to call Tick() every frame. 
 	PrimaryActorTick.bCanEverTick = true;
 
-	++_PlayerCount;
 }
 
 // Called when the game starts or when spawned
@@ -46,7 +45,7 @@ void AMainPawn::spawnAnimal_Implementation(EAnimalEnum Animal, FTransform Transf
 */
 void AMainPawn::spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, AActor *Tsunami) {}
 
-
+//Return the number of player on the server
 int32 AMainPawn::GetPlayerNumber() {
 	TArray<AMainPawn*> Players;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AMainPawn::StaticClass(), Players);
