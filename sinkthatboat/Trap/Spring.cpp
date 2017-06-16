@@ -8,7 +8,7 @@ void ASpring::throwAnimals() {
 	GetOverlappingActors(Actors);
 
 	for (auto& Actor : Actors) {
-		AAnimal *Animal = Cast<AAnimal>(Actors);
+		AAnimal *Animal = Cast<AAnimal>(Actor);
 
 		//Doesn't launch elephants & traps
 		if (Animal && !Cast<AElephant>(Animal)) {
