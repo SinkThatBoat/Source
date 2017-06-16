@@ -4,8 +4,6 @@
 #include "MainPawn.h"
 
 
-int32 AMainPawn::_PlayerCount = 0;
-
 // Sets default values
 AMainPawn::AMainPawn() {
 
@@ -50,5 +48,7 @@ void AMainPawn::spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, A
 
 
 int32 AMainPawn::GetPlayerNumber() {
-	return _PlayerCount;
+	TArray<AMainPawn*> Players;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AMainPawn::StaticClass(), Players);
+	return Players.Num();
 }

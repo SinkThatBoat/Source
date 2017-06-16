@@ -40,8 +40,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
 	EPlayerEnum _PlayerType;
 
-	static int32 _PlayerCount;
-
 	UFUNCTION(BlueprintCallable)
 	static int32 GetPlayerNumber();
 	
