@@ -21,7 +21,7 @@ void APitfall::Tick(float DeltaTime) {
 		AAnimal *Animal = Cast<AAnimal>(Actor);
 		if (Animal  && !Cast<AChicken>(Actor)) {
 			FVector position = Animal->GetActorLocation();
-			position.Y -= 1;
+			position.Z -= 100;
 			Animal->SetActorLocation(position);
 		}
 	}
