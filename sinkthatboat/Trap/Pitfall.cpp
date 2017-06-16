@@ -13,6 +13,8 @@ APitfall::APitfall() {
 // Called every frame
 void APitfall::Tick(float DeltaTime) {
 	
+	Super::Tick(DeltaTime);
+
 	//Catch all the overlapped animals
 	TArray<AActor*> Actors;
 	GetOverlappingActors(Actors);
