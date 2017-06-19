@@ -19,6 +19,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	//Set up the replication
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -37,10 +40,7 @@ public:
 	void spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, AActor *Tsunami);
 
 	// Type of player
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player", Replicated)
 	EPlayerEnum _PlayerType;
-
-	UFUNCTION(reliable, server, WithValidation)
-	int32 SRV_getPlayerNumber() const;
 	
 };

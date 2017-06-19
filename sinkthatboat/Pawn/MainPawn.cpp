@@ -10,6 +10,8 @@ AMainPawn::AMainPawn() {
  	// Set this pawn to call Tick() every frame. 
 	PrimaryActorTick.bCanEverTick = true;
 
+	// Make sure that we're replicating this actor
+	bReplicates = true;
 }
 
 // Called when the game starts or when spawned
@@ -24,6 +26,11 @@ void AMainPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+//Enable replication for selected variables
+void AMainPawn::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const {
+	DOREPLIFETIME(AMainPawn, _PlayerType);
 }
 
 // Called to bind functionality to input
