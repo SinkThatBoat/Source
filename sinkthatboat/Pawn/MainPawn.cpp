@@ -54,7 +54,7 @@ void AMainPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	Spawn an animal in the map for this player
 	Overridable in blueprint
 */
-void AMainPawn::spawnAnimal_Implementation(EAnimalEnum Animal, FTransform Transform) {}
+void AMainPawn::spawnAnimal_Implementation(EAnimalEnum Animal, FTransform Transform, EPlayerEnum Player) {}
 
 /*
 	Spawn a trap in the map for this player

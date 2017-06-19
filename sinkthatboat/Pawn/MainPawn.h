@@ -32,8 +32,8 @@ public:
 
 	//Function that spawns an animal server's side overrided and implemented in blueprint
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Animals")
-	void spawnAnimal(EAnimalEnum Animal, FTransform Transform);
-	void spawnAnimal_Implementation(EAnimalEnum Animal, FTransform Transform);
+	void spawnAnimal(EAnimalEnum Animal, FTransform Transform, EPlayerEnum Player);
+	void spawnAnimal_Implementation(EAnimalEnum Animal, FTransform Transform, EPlayerEnum Player);
 
 	//Function that spawns a trap server's side overrided and implemented in blueprint
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Traps")
