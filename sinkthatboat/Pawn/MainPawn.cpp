@@ -20,7 +20,7 @@ void AMainPawn::BeginPlay() {
 	
 	//Set the replicated var server side
 	if (Role == ROLE_Authority) {
-		switch (GetGameMode()->NumPlayers) {
+		switch (GetWorld()->GetAuthGameMode()->GetNumPlayers()) {
 		case 1:  _PlayerType = EPlayerEnum::PLAYER_SERVER;   break;
 		case 2:  _PlayerType = EPlayerEnum::PLAYER_1;		 break;
 		case 3:  _PlayerType = EPlayerEnum::PLAYER_2;		 break;
