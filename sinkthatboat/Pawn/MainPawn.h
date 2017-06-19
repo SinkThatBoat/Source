@@ -40,5 +40,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
 	EPlayerEnum _PlayerType;
 
+	UFUNCTION(reliable, server, WithValidation)
+	int32 SRV_getPlayerNumber() const;
 	
 };
