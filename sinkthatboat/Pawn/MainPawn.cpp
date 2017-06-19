@@ -3,12 +3,6 @@
 #include "sinkthatboat.h"
 #include "MainPawn.h"
 
-int32 AMainPawn::_PlayerNumber = 0;
-
-int32 AMainPawn::getPlayerNumber() {
-	return _PlayerNumber;
-}
-
 
 // Sets default values
 AMainPawn::AMainPawn() {
@@ -21,8 +15,7 @@ AMainPawn::AMainPawn() {
 }
 
 // Called when the game starts or when spawned
-void AMainPawn::BeginPlay()
-{
+void AMainPawn::BeginPlay() {
 	Super::BeginPlay();
 	
 }
