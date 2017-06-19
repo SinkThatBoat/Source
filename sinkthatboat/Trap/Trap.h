@@ -25,9 +25,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintCallable)
-	virtual void spawn(FVector location);
-
 protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Cooldown")

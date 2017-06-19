@@ -6,7 +6,7 @@
 #include "Seal.generated.h"
 
 /**
- * 
+ * Seal
  */
 UCLASS()
 class SINKTHATBOAT_API ASeal : public AAnimal

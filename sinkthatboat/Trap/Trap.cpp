@@ -24,6 +24,3 @@ void ATrap::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-
-//Spawn the trap 
-void ATrap::spawn(FVector location) {}

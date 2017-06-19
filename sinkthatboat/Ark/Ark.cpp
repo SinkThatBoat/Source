@@ -5,9 +5,8 @@
 
 
 // Sets default values
-AArk::AArk()
-{
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+AArk::AArk() {
+ 	// Set this actor to call Tick() every frame. 
 	PrimaryActorTick.bCanEverTick = true;
 
 	//Set the ark life
@@ -17,15 +16,13 @@ AArk::AArk()
 }
 
 // Called when the game starts or when spawned
-void AArk::BeginPlay()
-{
+void AArk::BeginPlay() {
 	Super::BeginPlay();
 	
 }
 
 // Called every frame
-void AArk::Tick(float DeltaTime)
-{
+void AArk::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 
 }
