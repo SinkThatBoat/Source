@@ -10,10 +10,6 @@ int32 AMainPawn::getPlayerNumber() {
 }
 
 
-void AMainPawn::setPlayerNumber(int32 PlayerNumber) {
-	_PlayerNumber = PlayerNumber;
-}
-
 // Sets default values
 AMainPawn::AMainPawn() {
 
