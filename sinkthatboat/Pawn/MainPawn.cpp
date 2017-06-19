@@ -18,6 +18,8 @@ AMainPawn::AMainPawn() {
 void AMainPawn::BeginPlay() {
 	Super::BeginPlay();
 	
+	//
+
 }
 
 // Called every frame
@@ -29,7 +31,7 @@ void AMainPawn::Tick(float DeltaTime)
 
 //Enable replication for selected variables
 void AMainPawn::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const {
-	DOREPLIFETIME(AMainPawn, _PlayerType);
+	DOREPLIFETIME(EPlayerEnum, _PlayerType);
 }
 
 // Called to bind functionality to input
