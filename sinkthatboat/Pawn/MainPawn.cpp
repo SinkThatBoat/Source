@@ -31,7 +31,7 @@ void AMainPawn::Tick(float DeltaTime)
 
 //Enable replication for selected variables
 void AMainPawn::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const {
-	DOREPLIFETIME(EPlayerEnum, _PlayerType);
+	//DOREPLIFETIME(EPlayerEnum, _PlayerType);
 }
 
 // Called to bind functionality to input
