@@ -9,6 +9,17 @@
 #define ERROR(x) if(GEngine)GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red,	  TEXT(x));
 
 /**
+*	Database options
+**/
+#define DATABASE_IP			"127.0.0.1"
+#define DATABASE_USERNAME	"sinkthatboat"
+#define DATABASE_PASSWORD	"Admin"
+#define DATABASE_NAME		"sinkthatbase"
+#define DATABASE_PORT		3306
+#define DATABASE_TABLE		"tb_player"	
+
+
+/**
 *	Constantes
 **/
 
