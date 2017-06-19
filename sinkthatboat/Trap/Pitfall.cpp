@@ -6,7 +6,7 @@
 
 
 APitfall::APitfall() {
-
+	_Content = 0;
 }
 
 
@@ -26,6 +26,16 @@ void APitfall::Tick(float DeltaTime) {
 			FVector position = Animal->GetActorLocation();
 			position.Z -= 100;
 			Animal->SetActorLocation(position);
+
+			if (!Animal->isDead()) {
+				Animal->kill();
+				_Content++;
+			}
+				
 		}
 	}
+
+
+	if (_Content > PITFALL_LIFE)
+		Destroy();
 }
