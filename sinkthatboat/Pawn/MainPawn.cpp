@@ -27,9 +27,6 @@ void AMainPawn::BeginPlay() {
 		default: _PlayerType = EPlayerEnum::PLAYER_SPECTATOR;
 		}
 	}
-	const UEnum *a = FindObject<UEnum>(ANY_PACKAGE,TEXT("EPlayerEnum"), true);
-	if (GEngine)GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, a->GetDisplayNameText(static_cast<int>(_PlayerType)).ToString());
-
 }
 
 // Called every frame
@@ -41,6 +38,8 @@ void AMainPawn::Tick(float DeltaTime)
 
 //Enable replication for selected variables
 void AMainPawn::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const {
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
 	DOREPLIFETIME(AMainPawn, _PlayerType);
 }
 

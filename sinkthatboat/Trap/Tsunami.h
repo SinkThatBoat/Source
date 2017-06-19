@@ -14,6 +14,7 @@ class SINKTHATBOAT_API ATsunami : public ATrap
 	GENERATED_BODY()
 	
 public:
+	UFUNCTION(BlueprintCallable)
 	void spawn(FVector location);
 
 private:
