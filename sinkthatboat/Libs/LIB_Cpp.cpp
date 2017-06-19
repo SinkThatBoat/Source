@@ -38,3 +38,8 @@ TArray<float> ULIB_Cpp::decreaseCooldown(TArray<float> Cooldown) {
 	return Cooldown;
 }
 
+
+
+void ULIB_Cpp::addScore(FName name, int32 Score) {
+
+}
