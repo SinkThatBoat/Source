@@ -4,6 +4,9 @@
 	This file contains all the enum & constant used in C++
 */
 
+//Turn this to false to compile on android
+#define __WINDOWS__ true
+
 //Print to screen macro
 #define DEBUG(x) if(GEngine)GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT(x)); 
 #define ERROR(x) if(GEngine)GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red,	  TEXT(x));
@@ -11,6 +14,7 @@
 /**
 *	Database options
 **/
+#define DATABASE_APP		"./Database_Query"
 #define DATABASE_IP			"127.0.0.1"
 #define DATABASE_USERNAME	"sinkthatboat"
 #define DATABASE_PASSWORD	"Admin"

@@ -1,13 +1,17 @@
 //
 #pragma once
 
-#include "string"
-#include "winsock.h"
-#include "mysql.h"
 #include "../Header.h"
+
+#if __WINDOWS__
+	#include "Windows.h"
+	#include "string"
+#endif
+
 #include "EngineUtils.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "LIB_Cpp.generated.h"
+
 
 /**
  * 
