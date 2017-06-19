@@ -34,6 +34,11 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
 	static FString getServerIP();
 
+	/**
+	* Add a record in the database
+	**/
+	UFUNCTION(BlueprintCallable, Category = "Database")
+	static void addScore(FName name, int32 Score);
 
 	UFUNCTION(BlueprintCallable, Category = "Cooldown")
 	static TArray<float> decreaseCooldown(TArray<float> Cooldown);
