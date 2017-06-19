@@ -27,9 +27,6 @@ public:
 
 protected:
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Cooldown")
-	float _Cooldown;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USkeletalMeshComponent *_Mesh;
 	
