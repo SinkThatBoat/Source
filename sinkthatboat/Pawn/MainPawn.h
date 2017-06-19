@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "UnrealNetwork.h"
 #include "../Header.h"
 #include "GameFramework/Pawn.h"
 #include "MainPawn.generated.h"
