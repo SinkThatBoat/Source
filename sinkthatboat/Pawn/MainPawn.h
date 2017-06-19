@@ -40,7 +40,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
 	EPlayerEnum _PlayerType;
 
-	UFUNCTION(reliable, server, WithValidation)
-	int32 SRV_getPlayerNumber() const;
+	//Number of players
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	static int32 getPlayerNumber();
+	
+	UFUNCTION(BlueprintCallable)
+	static void setPlayerNumber(int32 PlayerNumber);
+
+
+	static int32 _PlayerNumber;
 	
 };

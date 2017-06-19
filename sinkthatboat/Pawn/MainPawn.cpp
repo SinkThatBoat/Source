@@ -3,6 +3,16 @@
 #include "sinkthatboat.h"
 #include "MainPawn.h"
 
+int32 AMainPawn::_PlayerNumber = 0;
+
+int32 AMainPawn::getPlayerNumber() {
+	return _PlayerNumber;
+}
+
+
+void AMainPawn::setPlayerNumber(int32 PlayerNumber) {
+	_PlayerNumber = PlayerNumber;
+}
 
 // Sets default values
 AMainPawn::AMainPawn() {
@@ -44,8 +54,3 @@ void AMainPawn::spawnAnimal_Implementation(EAnimalEnum Animal, FTransform Transf
 	Overridable in blueprint
 */
 void AMainPawn::spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, AActor *Tsunami) {}
-
-
-int32 AMainPawn::SRV_getPlayerNumber() const {
-	return GetWorld()->GetAuthGameMode()->GetNumPlayers();
-}
