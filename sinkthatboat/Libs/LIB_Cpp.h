@@ -1,11 +1,17 @@
 //
 #pragma once
 
-#include "sql.h"
 #include "../Header.h"
+
+#if __WINDOWS__
+	#include "Windows.h"
+	#include "string"
+#endif
+
 #include "EngineUtils.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "LIB_Cpp.generated.h"
+
 
 /**
  * 
@@ -38,7 +44,7 @@ public:
 	* Add a record in the database
 	**/
 	UFUNCTION(BlueprintCallable, Category = "Database")
-	static void addScore(FName name, int32 Score);
+	static void addScore(FName Name, int32 Score);
 
 	UFUNCTION(BlueprintCallable, Category = "Cooldown")
 	static TArray<float> decreaseCooldown(TArray<float> Cooldown);
