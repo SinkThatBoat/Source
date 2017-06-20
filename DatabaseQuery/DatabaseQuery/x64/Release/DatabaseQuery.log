@@ -1,0 +1,6 @@
+﻿  main.cpp
+main.obj : error LNK2001: unresolved external symbol mysql_real_connect
+main.obj : error LNK2001: unresolved external symbol mysql_close
+main.obj : error LNK2001: unresolved external symbol mysql_query
+main.obj : error LNK2001: unresolved external symbol mysql_init
+C:\Users\charcle\Documents\GitHub\Source\DatabaseQuery\x64\Release\DatabaseQuery.exe : fatal error LNK1120: 4 unresolved externals
