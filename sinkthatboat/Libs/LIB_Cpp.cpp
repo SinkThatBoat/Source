@@ -4,7 +4,6 @@
 #include "LIB_Cpp.h"
 
 
-
 float ULIB_Cpp::getSealCooldown() {
 	return SEAL_COOLDOWN;
 }
@@ -40,6 +39,19 @@ TArray<float> ULIB_Cpp::decreaseCooldown(TArray<float> Cooldown) {
 
 
 
+<<<<<<< HEAD
 void ULIB_Cpp::addScore(FName name, int32 Score) {
 	
+=======
+void ULIB_Cpp::addScore(
+	FName Name,
+	int32 Score
+) {
+#if __WINDOWS__
+	//Call another program to add player in the db
+	FString s = DATABASE_APP + FString(" ") + Name.ToString() + FString("¢") + FString::FromInt(Score);
+	std::string param(TCHAR_TO_UTF8(*s));
+	system(param.c_str());
+#endif
+>>>>>>> 064c64f106598b654aaab184c3313971bbe9b7ec
 }
