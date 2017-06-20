@@ -14,6 +14,7 @@ void ASpring::throwAnimals() {
 		if (Animal && !Cast<AElephant>(Animal)) {
 			Animal->GetMovementComponent()->StopMovementImmediately();
 			Animal->LaunchCharacter(FVector(SPRING_THROW, 0, SPRING_THROW), false, false);
+			freePlace();
 		}
 	}
 }

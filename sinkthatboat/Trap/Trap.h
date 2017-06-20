@@ -26,6 +26,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 protected:
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interface")
+	void freePlace();
+	void freePlace_Implementation();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USkeletalMeshComponent *_Mesh;
