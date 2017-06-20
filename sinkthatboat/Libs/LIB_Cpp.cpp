@@ -55,10 +55,8 @@ TArray<float> ULIB_Cpp::decreaseCooldown(TArray<float> Cooldown) {
 
 
 
-<<<<<<< HEAD
 void ULIB_Cpp::addScore(FName name, int32 Score) {
 	
-=======
 void ULIB_Cpp::addScore(
 	FName Name,
 	int32 Time,
@@ -79,5 +77,4 @@ void ULIB_Cpp::addScore(
 	std::string param(TCHAR_TO_UTF8(*s));
 	system(param.c_str());
 #endif
->>>>>>> 064c64f106598b654aaab184c3313971bbe9b7ec
 }
