@@ -40,11 +40,26 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
 	static FString getServerIP();
 
+
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
+	static float getMudCooldown();
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
+	static float getPitfallCooldown();
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
+	static float getSpringCooldown();
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
+	static float getTsunamiCooldown();
+
+
 	/**
 	* Add a record in the database
 	**/
 	UFUNCTION(BlueprintCallable, Category = "Database")
-	static void addScore(FName Name, int32 Score);
+	static void addScore(FName Name, int32 Time, TArray<int32> Scores, bool hasSinked);
 
 	UFUNCTION(BlueprintCallable, Category = "Cooldown")
 	static TArray<float> decreaseCooldown(TArray<float> Cooldown);

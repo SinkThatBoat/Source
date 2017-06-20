@@ -28,6 +28,22 @@ FString ULIB_Cpp::getServerIP() {
 	return SERVER_IP;
 }
 
+float ULIB_Cpp::getMudCooldown() {
+	return MUD_COOLDOWN;
+}
+
+float ULIB_Cpp::getPitfallCooldown() {
+	return PITFALL_COOLDOWN;
+}
+
+float ULIB_Cpp::getSpringCooldown() {
+	return SPRING_COOLDOWN;
+}
+
+float ULIB_Cpp::getTsunamiCooldown() {
+	return TSUNAMI_COOLDOWN;
+}
+
 TArray<float> ULIB_Cpp::decreaseCooldown(TArray<float> Cooldown) {
 	for (int32 i = 0; i < Cooldown.Num(); ++i) {
 		Cooldown[i] -= 0.05f;
@@ -41,11 +57,21 @@ TArray<float> ULIB_Cpp::decreaseCooldown(TArray<float> Cooldown) {
 
 void ULIB_Cpp::addScore(
 	FName Name,
-	int32 Score
+	int32 Time,
+	TArray<int32> Scores,
+	bool hasSinked
 ) {
 #if __WINDOWS__
 	//Call another program to add player in the db
-	FString s = DATABASE_APP + FString(" ") + Name.ToString() + FString("¢") + FString::FromInt(Score);
+	FString s = FString("start ") + DATABASE_APP + Name.ToString();
+	for (int32 i = 0; i < Scores.Num(); ++i) {
+		s += FString::FromInt(Scores[i]) + " ";
+	}
+	
+	s += hasSinked ? "TRUE" : "FALSE";
+
+	s += ");";
+
 	std::string param(TCHAR_TO_UTF8(*s));
 	system(param.c_str());
 #endif

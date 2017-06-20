@@ -14,13 +14,7 @@
 /**
 *	Database options
 **/
-#define DATABASE_APP		"./Database_Query"
-#define DATABASE_IP			"127.0.0.1"
-#define DATABASE_USERNAME	"sinkthatboat"
-#define DATABASE_PASSWORD	"Admin"
-#define DATABASE_NAME		"sinkthatbase"
-#define DATABASE_PORT		3306
-#define DATABASE_TABLE		"tb_player"	
+#define DATABASE_APP		"./Release/DatabaseQuery.exe"
 
 
 /**
