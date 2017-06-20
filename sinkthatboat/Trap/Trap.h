@@ -27,8 +27,11 @@ public:
 
 protected:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interface")
-	void freePlace();
-	void freePlace_Implementation();
+	void freePlace(int32 Index);
+	void freePlace_Implementation(int32 Index);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 _Index;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USkeletalMeshComponent *_Mesh;

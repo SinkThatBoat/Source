@@ -37,7 +37,7 @@ void APitfall::Tick(float DeltaTime) {
 
 
 	if (_Content > PITFALL_LIFE) {
-		freePlace();
+		freePlace(_Index);
 		Destroy();
 	}
 }

@@ -40,7 +40,8 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
 	static FString getServerIP();
 
-
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
+	static bool isWindows();
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
 	static float getMudCooldown();

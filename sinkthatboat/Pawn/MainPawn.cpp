@@ -50,6 +50,11 @@ void AMainPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
+// Set the name on the server
+void AMainPawn::setName(const FName& Name) {
+	_Name = Name;
+}
+
 /*
 	Spawn an animal in the map for this player
 	Overridable in blueprint

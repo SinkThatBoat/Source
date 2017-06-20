@@ -3,7 +3,7 @@
 #include "sinkthatboat.h"
 #include "Trap.h"
 
-void ATrap::freePlace_Implementation() {}
+void ATrap::freePlace_Implementation(int32 Index) {}
 
 // Sets default values
 ATrap::ATrap()

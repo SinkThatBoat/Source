@@ -53,6 +53,9 @@ TArray<float> ULIB_Cpp::decreaseCooldown(TArray<float> Cooldown) {
 	return Cooldown;
 }
 
+bool ULIB_Cpp::isWindows() {
+	return __WINDOWS__;
+}
 
 	
 void ULIB_Cpp::addScore(

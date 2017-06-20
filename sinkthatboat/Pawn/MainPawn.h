@@ -40,8 +40,17 @@ public:
 	void spawnTrap(ETrapEnum Trap, FTransform Transform, AActor *Tsunami);
 	void spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, AActor *Tsunami);
 
+protected:
+	UFUNCTION(Replicated, Server, BlueprintCallable)
+	void setName(const FName& Name);
+
 	// Type of player
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player", Replicated)
 	EPlayerEnum _PlayerType;
 	
+	//The name of the player
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Name", Replicated)
+	FName _Name;
+
+
 };
