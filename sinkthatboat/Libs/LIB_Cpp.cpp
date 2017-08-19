@@ -54,7 +54,7 @@ TArray<float> ULIB_Cpp::decreaseCooldown(TArray<float> Cooldown) {
 }
 
 bool ULIB_Cpp::isWindows() {
-	return __WINDOWS__;
+	return PLATFORM_WINDOWS;
 }
 
 	
@@ -64,7 +64,7 @@ void ULIB_Cpp::addScore(
 	TArray<int32> Scores,
 	bool hasSinked
 ) {
-#if __WINDOWS__
+#if PLATFORM_WINDOWS
 	//Call another program to add player in the db
 	FString s = FString("start ") + DATABASE_APP + Name.ToString();
 	for (int32 i = 0; i < Scores.Num(); ++i) {
