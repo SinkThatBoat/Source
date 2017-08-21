@@ -11,8 +11,7 @@
 class AMud;
 
 UCLASS()
-class SINKTHATBOAT_API AAnimal : public ACharacter
-{
+class SINKTHATBOAT_API AAnimal : public ACharacter {
 	GENERATED_BODY()
 
 public:

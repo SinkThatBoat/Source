@@ -44,7 +44,7 @@ float ULIB_Cpp::getTsunamiCooldown() {
 	return TSUNAMI_COOLDOWN;
 }
 
-TArray<float> ULIB_Cpp::decreaseCooldown(TArray<float> Cooldown) {
+TArray<float> ULIB_Cpp::decreaseCooldown(TArray<float>& Cooldown) {
 	for (int32 i = 0; i < Cooldown.Num(); ++i) {
 		Cooldown[i] -= 0.05f;
 		if (Cooldown[i] < 0)
@@ -59,10 +59,10 @@ bool ULIB_Cpp::isWindows() {
 
 	
 void ULIB_Cpp::addScore(
-	FName Name,
-	int32 Time,
-	TArray<int32> Scores,
-	bool hasSinked
+	const FName Name,
+	const int32 Time,
+	const TArray<int32> Scores,
+	const bool hasSinked
 ) {
 #if PLATFORM_WINDOWS
 	//Call another program to add player in the db
@@ -75,7 +75,7 @@ void ULIB_Cpp::addScore(
 
 	s += ");";
 
-	std::string param(TCHAR_TO_UTF8(*s));
+	const std::string param(TCHAR_TO_UTF8(*s));
 	system(param.c_str());
 #endif
 }

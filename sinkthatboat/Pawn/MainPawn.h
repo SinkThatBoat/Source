@@ -41,7 +41,7 @@ public:
 	void spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, AActor *Tsunami);
 
 protected:
-	UFUNCTION(Replicated, Server, BlueprintCallable)
+	UFUNCTION(Server, reliable, WithValidation, BlueprintCallable)
 	void setName(const FName& Name);
 
 	// Type of player

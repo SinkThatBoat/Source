@@ -3,7 +3,7 @@
 
 #include "../Header.h"
 
-#if __WINDOWS__
+#if PLATFORM_WINDOWS
 	#include "Windows.h"
 	#include "string"
 #endif
@@ -14,11 +14,10 @@
 
 
 /**
- * 
+ *	Library exposed to blueprint
  */
 UCLASS()
-class SINKTHATBOAT_API ULIB_Cpp : public UBlueprintFunctionLibrary
-{
+class SINKTHATBOAT_API ULIB_Cpp : public UBlueprintFunctionLibrary {
 	GENERATED_BODY()
 
 public:
@@ -60,9 +59,9 @@ public:
 	* Add a record in the database
 	**/
 	UFUNCTION(BlueprintCallable, Category = "Database")
-	static void addScore(FName Name, int32 Time, TArray<int32> Scores, bool hasSinked);
+	static void addScore(const FName Name, const int32 Time, const TArray<int32> Scores, const bool hasSinked);
 
 	UFUNCTION(BlueprintCallable, Category = "Cooldown")
-	static TArray<float> decreaseCooldown(TArray<float> Cooldown);
+	static TArray<float> decreaseCooldown(UPARAM(ref) TArray<float> &Cooldown);
 	
 };

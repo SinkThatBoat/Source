@@ -51,8 +51,12 @@ void AMainPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 }
 
 // Set the name on the server
-void AMainPawn::setName(const FName& Name) {
+void AMainPawn::setName_Implementation(const FName& Name) {
 	_Name = Name;
+}
+
+bool AMainPawn::setName_Validate(const FName& Name) {
+	return true;
 }
 
 /*
