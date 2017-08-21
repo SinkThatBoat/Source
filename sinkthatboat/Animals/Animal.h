@@ -2,8 +2,9 @@
 
 #pragma once
 
-#include "../Ark/Ark.h"
-#include "../Header.h"
+#include "Enums.h"
+#include "Ark/Ark.h"
+#include "Header.h"
 #include "GameFramework/Character.h"
 #include "Animal.generated.h"
 
@@ -70,7 +71,7 @@ public:
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
-		EPlayerEnum _OwningPlayer;
+	EPlayerEnum _OwningPlayer;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
 		AArk *_Target;

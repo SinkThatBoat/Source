@@ -4,9 +4,20 @@
 #include "../Header.h"
 
 #if PLATFORM_WINDOWS
+	/**
+	 * Remove temporarily warning 
+	 * Windows.h and string create conflicts with ue4 API
+	 **/
+	#pragma warning(push)
+	#pragma warning(disable : 4668)
+	#pragma warning(disable : 4005)
 	#include "Windows.h"
 	#include "string"
-#endif
+	/**
+	 * Reactive warnings
+	 **/
+	#pragma warning(pop) 
+#endif	// PLATFORM_WINDOWS
 
 #include "EngineUtils.h"
 #include "Kismet/BlueprintFunctionLibrary.h"

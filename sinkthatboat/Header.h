@@ -1,8 +1,7 @@
 #pragma once
-#include "Macros.h"
-#include "Enums.h"
+
 /*
-	This file contains all the enum & constant used in C++
+	This file contains all the constants used in C++
 */
 
 /**
@@ -54,8 +53,6 @@
 #define TRAP_COOLDOWN		30
 
 #define TSUNAMI_COOLDOWN	90
-
-
 
 
 

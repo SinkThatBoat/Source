@@ -1,3 +1,4 @@
+#pragma once
 /**
  * SinkThatBoat's macros
  **/

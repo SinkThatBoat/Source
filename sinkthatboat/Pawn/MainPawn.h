@@ -2,14 +2,15 @@
 
 #pragma once
 
+#include "Enums.h"
+#include "Macros.h"
 #include "UnrealNetwork.h"
-#include "../Header.h"
+#include "Header.h"
 #include "GameFramework/Pawn.h"
 #include "MainPawn.generated.h"
 
 UCLASS()
-class SINKTHATBOAT_API AMainPawn : public APawn 
-{
+class SINKTHATBOAT_API AMainPawn : public APawn  {
 	GENERATED_BODY()
 
 public:
