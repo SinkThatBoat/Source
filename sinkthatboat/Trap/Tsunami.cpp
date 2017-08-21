@@ -27,8 +27,8 @@ void ATsunami::moveForward() {
 
 	GetOverlappingActors(Actors);
 
-	for (int32 i = 0; i < Actors.Num(); ++i) {
-		AAnimal *Animal = Cast<AAnimal>(Actors[i]);
+	for (auto& Actor : Actors) {
+		AAnimal *Animal = Cast<AAnimal>(Actor);
 		if (Animal) {
 			FVector l = Animal->GetActorLocation();
 			l.Z += 30;
