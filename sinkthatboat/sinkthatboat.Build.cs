@@ -4,7 +4,7 @@ using UnrealBuildTool;
 
 public class sinkthatboat : ModuleRules
 {
-	public sinkthatboat(TargetInfo Target)
+	public sinkthatboat(ReadOnlyTargetRules Target) : base (Target)
 	{
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 

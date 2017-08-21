@@ -87,9 +87,9 @@ void AAnimal::setSpeed(int32 Speed, bool applyChange) {
 //Destroy the animal
 void AAnimal::destroyMe() {
 	FVector size = GetActorScale3D();
-	size.X /= 1.05f;
-	size.Y /= 1.05f;
-	size.Z /= 1.05f;
+	size.X /= 1.01f;
+	size.Y /= 1.01f;
+	size.Z /= 1.01f;
 
 	SetActorScale3D(size);
 

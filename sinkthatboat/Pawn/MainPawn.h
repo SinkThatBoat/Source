@@ -32,26 +32,24 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	//Function that spawns an animal server's side overrided and implemented in blueprint
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Animals")
-	void spawnAnimal(EAnimalEnum Animal, FTransform Transform, EPlayerEnum Player);
-	void spawnAnimal_Implementation(EAnimalEnum Animal, FTransform Transform, EPlayerEnum Player);
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Animals")
+	void spawnAnimal(const EAnimalEnum Animal, const FTransform& Transform, const EPlayerEnum Player);
 
 	//Function that spawns a trap server's side overrided and implemented in blueprint
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Traps")
-	void spawnTrap(ETrapEnum Trap, FTransform Transform, AActor *Tsunami);
-	void spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, AActor *Tsunami);
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Traps")
+	void spawnTrap(const ETrapEnum Trap, const FTransform& Transform, AActor *Tsunami);
 
 protected:
 	UFUNCTION(Server, reliable, WithValidation, BlueprintCallable)
-	void setName(const FName& Name);
+	void Server_setName(const FName& Name);
 
 	// Type of player
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player", Replicated)
-	EPlayerEnum _PlayerType;
+	EPlayerEnum m_PlayerType;
 	
 	//The name of the player
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Name", Replicated)
-	FName _Name;
+	FName m_Name;
 
 
 };

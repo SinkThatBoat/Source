@@ -10,12 +10,13 @@
  *	Main Game Mode class
  */
 UCLASS()
-class SINKTHATBOAT_API AGM_Main : public AGameModeBase
-{
+class SINKTHATBOAT_API AGM_Main : public AGameModeBase {
 	GENERATED_BODY()
 	
+public:
 	AGM_Main();
 
+private:
 	
 	
 	

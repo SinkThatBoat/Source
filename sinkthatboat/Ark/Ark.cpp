@@ -38,8 +38,14 @@ bool AArk::receiveDamages(int32 Damages) {
 	
 	if (_Life <= 0) {
 		_Life = 0;
+
+		// Display the end game hud
+		displayEndGameHUD();
+
 		return true;
 	}
 
 	return false;
 }
+
+

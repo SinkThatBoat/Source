@@ -8,8 +8,7 @@
 
 UCLASS()
 
-class SINKTHATBOAT_API AArk : public AActor
-{
+class SINKTHATBOAT_API AArk : public AActor {
 	GENERATED_BODY()
 	
 public:	
@@ -36,6 +35,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gameplay")
 	int32 _Life;
 
+protected:
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void displayEndGameHUD(); 
 
 	
 	

@@ -3,25 +3,21 @@
 #include "sinkthatboat.h"
 #include "Trap.h"
 
-void ATrap::freePlace_Implementation(int32 Index) {}
 
 // Sets default values
-ATrap::ATrap()
-{
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+ATrap::ATrap() {
+ 	// Set this actor to call Tick() every frame. 
 	PrimaryActorTick.bCanEverTick = true;
 }
 
 // Called when the game starts or when spawned
-void ATrap::BeginPlay()
-{
+void ATrap::BeginPlay() {
 	Super::BeginPlay();
 
 }
 
 // Called every frame
-void ATrap::Tick(float DeltaTime)
-{
+void ATrap::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 
 }

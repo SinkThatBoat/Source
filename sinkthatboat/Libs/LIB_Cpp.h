@@ -74,5 +74,13 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Cooldown")
 	static TArray<float> decreaseCooldown(UPARAM(ref) TArray<float> &Cooldown);
-	
+
+
+	/**
+	 *	Store the player's name
+	 **/
+	 UFUNCTION(BlueprintCallable)
+	 static void savePlayerName(const FName& Name);
+	 UFUNCTION(BlueprintCallable)
+	 static FName loadPlayerName();
 };

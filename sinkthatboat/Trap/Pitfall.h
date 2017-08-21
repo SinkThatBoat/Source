@@ -10,8 +10,7 @@
  * 
  */
 UCLASS()
-class SINKTHATBOAT_API APitfall : public ATrap
-{
+class SINKTHATBOAT_API APitfall : public ATrap {
 	GENERATED_BODY()
 	
 public:
@@ -22,6 +21,6 @@ public:
 
 private:
 	UPROPERTY()
-	int _Content;
+	int m_Content;
 
 };

@@ -15,7 +15,7 @@ class SINKTHATBOAT_API ATsunami : public ATrap
 	
 public:
 	UFUNCTION(BlueprintCallable)
-	void spawn(FVector location);
+	void spawn(const FVector& location);
 
 private:
 	UFUNCTION()

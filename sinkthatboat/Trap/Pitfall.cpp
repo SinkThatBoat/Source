@@ -6,7 +6,7 @@
 
 
 APitfall::APitfall() {
-	_Content = 0;
+	m_Content = 0;
 }
 
 
@@ -29,15 +29,14 @@ void APitfall::Tick(float DeltaTime) {
 
 			if (!Animal->isDead()) {
 				Animal->kill();
-				_Content++;
-			}
-				
+				m_Content++;
+			}				
 		}
 	}
 
 
-	if (_Content > PITFALL_LIFE) {
-		freePlace(_Index);
+	if (m_Content > PITFALL_LIFE) {
+		freePlace(m_Index);
 		Destroy();
 	}
 }

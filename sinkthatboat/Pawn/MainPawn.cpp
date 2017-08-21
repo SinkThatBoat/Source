@@ -2,7 +2,8 @@
 
 #include "sinkthatboat.h"
 #include "MainPawn.h"
-
+#include "SaveGame/MainSaveGame.h"
+#include "Libs/LIB_Cpp.h"
 
 // Sets default values
 AMainPawn::AMainPawn() {
@@ -21,52 +22,45 @@ void AMainPawn::BeginPlay() {
 	//Set the replicated var server side
 	if (Role == ROLE_Authority) {
 		switch (GetWorld()->GetAuthGameMode()->GetNumPlayers()) {
-		case 1:  _PlayerType = EPlayerEnum::PLAYER_SERVER;   break;
-		case 2:  _PlayerType = EPlayerEnum::PLAYER_1;		 break;
-		case 3:  _PlayerType = EPlayerEnum::PLAYER_2;		 break;
-		default: _PlayerType = EPlayerEnum::PLAYER_SPECTATOR;
+		case 1:  m_PlayerType = EPlayerEnum::PLAYER_SERVER;   break;
+		case 2:  m_PlayerType = EPlayerEnum::PLAYER_1;		 break;
+		case 3:  m_PlayerType = EPlayerEnum::PLAYER_2;		 break;
+		default: m_PlayerType = EPlayerEnum::PLAYER_SPECTATOR;
 		}
+	}
+
+	// Set the name of the player from the client to the server
+	if (Role != ROLE_Authority) {
+		const FName Name = ULIB_Cpp::loadPlayerName();
+		Server_setName(Name);
 	}
 }
 
 // Called every frame
-void AMainPawn::Tick(float DeltaTime)
-{
+void AMainPawn::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 
 }
 
 //Enable replication for selected variables
-void AMainPawn::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const {
+void AMainPawn::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME(AMainPawn, _PlayerType);
+	DOREPLIFETIME(AMainPawn, m_PlayerType);
+	DOREPLIFETIME(AMainPawn, m_Name);
 }
 
 // Called to bind functionality to input
-void AMainPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
+void AMainPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
 
 // Set the name on the server
-void AMainPawn::setName_Implementation(const FName& Name) {
-	_Name = Name;
+void AMainPawn::Server_setName_Implementation(const FName& Name) {
+	m_Name = Name;
 }
 
-bool AMainPawn::setName_Validate(const FName& Name) {
+bool AMainPawn::Server_setName_Validate(const FName& Name) {
 	return true;
 }
-
-/*
-	Spawn an animal in the map for this player
-	Overridable in blueprint
-*/
-void AMainPawn::spawnAnimal_Implementation(EAnimalEnum Animal, FTransform Transform, EPlayerEnum Player) {}
-
-/*
-	Spawn a trap in the map for this player
-	Overridable in blueprint
-*/
-void AMainPawn::spawnTrap_Implementation(ETrapEnum Trap, FTransform Transform, AActor *Tsunami) {}

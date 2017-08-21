@@ -3,7 +3,7 @@
 #include "sinkthatboat.h"
 #include "Tsunami.h"
 
-void ATsunami::spawn(FVector location) {
+void ATsunami::spawn(const FVector& location) {
 	SetActorLocation(location);
 	
 	UWorld *World = GetWorld();
@@ -15,18 +15,16 @@ void ATsunami::spawn(FVector location) {
 }
 
 void ATsunami::moveForward() {
+	// Move the tsunami forward
 	FVector location = GetActorLocation();
-
 	location.X += 100;
-
 	SetActorLocation(location, true);
 
+	// Get overlapping actors
 	TArray<AActor*> Actors;
-	
-	//DEBUG("Hit");
-
 	GetOverlappingActors(Actors);
 
+	// Move overlapping animals
 	for (auto& Actor : Actors) {
 		AAnimal *Animal = Cast<AAnimal>(Actor);
 		if (Animal) {

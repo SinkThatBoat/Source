@@ -2,7 +2,7 @@
 
 #include "sinkthatboat.h"
 #include "LIB_Cpp.h"
-
+#include "Savegame/MainSaveGame.h"
 
 float ULIB_Cpp::getSealCooldown() {
 	return SEAL_COOLDOWN;
@@ -78,4 +78,23 @@ void ULIB_Cpp::addScore(
 	const std::string param(TCHAR_TO_UTF8(*s));
 	system(param.c_str());
 #endif
+}
+
+
+
+void ULIB_Cpp::savePlayerName(const FName& Name) {
+	UMainSaveGame* const SaveGame = UMainSaveGame::loadSaveGame();
+	if (SaveGame) {
+		SaveGame->m_Name = Name;
+		SaveGame->saveGame();
+	}
+}
+
+
+FName ULIB_Cpp::loadPlayerName() {
+	UMainSaveGame* const SaveGame = UMainSaveGame::loadSaveGame();
+	if (SaveGame) {
+		return SaveGame->m_Name;
+	}
+	return TEXT("");
 }

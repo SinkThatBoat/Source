@@ -18,17 +18,17 @@
 #define SERVER_IP			"172.16.40.38"
 
 //Arks
-#define ARK_LIFE			25000
+#define ARK_LIFE			2500
 #define ARK_SINK_SPEED		4
 
 // Animals
 #define ELEPHANT_WEIGHT		2500
 #define ELEPHANT_SPEED		6
-#define ELEPHANT_COOLDOWN	10
+#define ELEPHANT_COOLDOWN	8
 
 #define SEAL_WEIGHT			350
 #define SEAL_SPEED			15
-#define SEAL_COOLDOWN		3
+#define SEAL_COOLDOWN		2
 
 #define CHICKEN_WEIGHT		100
 #define CHICKEN_SPEED		30
@@ -36,7 +36,7 @@
 
 #define PANDA_WEIGHT		850
 #define PANDA_SPEED			10
-#define PANDA_COOLDOWN		7
+#define PANDA_COOLDOWN		6
 
 // Traps
 #define SPRING_LIFE			1

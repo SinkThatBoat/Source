@@ -26,14 +26,13 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 protected:
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interface")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Interface")
 	void freePlace(int32 Index);
-	void freePlace_Implementation(int32 Index);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 _Index;
+	int32 m_Index;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	USkeletalMeshComponent *_Mesh;
+	USkeletalMeshComponent *m_Mesh;
 	
 };

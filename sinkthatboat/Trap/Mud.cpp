@@ -49,7 +49,7 @@ void AMud::minimize() {
 	SetActorScale3D(v);
 
 	if (v.X < 0.1) {
-		freePlace(_Index);
+		freePlace(m_Index);
 		Destroy();
 	}
 }
