@@ -3,10 +3,8 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class sinkthatboatEditorTarget : TargetRules
-{
-    public sinkthatboatEditorTarget(TargetInfo Target) : base(Target)
-    {
+public class sinkthatboatEditorTarget : TargetRules {
+    public sinkthatboatEditorTarget(TargetInfo Target) : base(Target) {
         Type = TargetType.Editor;
         ExtraModuleNames.Add("sinkthatboat");
     }
