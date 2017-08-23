@@ -2,8 +2,7 @@
 
 #include "sinkthatboat.h"
 #include "GM_Main.h"
-
-#include "../Pawn/MainPawn.h"
+#include "Pawn/MainPawn.h"
 
 
 /*

@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "../Header.h"
+#include "Header.h"
 #include "GameFramework/Actor.h"
 #include "Ark.generated.h"
 

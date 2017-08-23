@@ -2,8 +2,8 @@
 
 #pragma once
 
-#include "../Header.h"
-#include "../Animals/Animal.h"
+#include "Header.h"
+#include "Animals/Animal.h"
 #include "GameFramework/Actor.h"
 #include "Trap.generated.h"
 

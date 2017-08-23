@@ -2,7 +2,7 @@
 
 #include "sinkthatboat.h"
 #include "Animal.h"
-#include "../Trap/Mud.h"
+#include "Trap/Mud.h"
 
 // Sets default values
 AAnimal::AAnimal()

@@ -1,7 +1,8 @@
 //
 #pragma once
 
-#include "../Header.h"
+#include "Header.h"
+#include "Savegame/MainSaveGame.h"
 
 #if PLATFORM_WINDOWS
 	/**

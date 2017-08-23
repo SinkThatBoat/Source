@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "../Animals/Elephant.h"
+#include "Animals/Elephant.h"
 #include "Trap/Trap.h"
 #include "Spring.generated.h"
 

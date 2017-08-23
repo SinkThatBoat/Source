@@ -11,8 +11,7 @@
 *	Mud class
 */
 UCLASS()
-class SINKTHATBOAT_API AMud : public ATrap
-{
+class SINKTHATBOAT_API AMud : public ATrap {
 	GENERATED_BODY()
 
 public:

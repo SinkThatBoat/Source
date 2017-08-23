@@ -1,6 +1,7 @@
 // 2017 . All rights reserved StB 
 
 #pragma once
+ #if WITH_EDITOR
 
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
@@ -24,10 +25,17 @@ public:
 	FName m_Name;
 	
 public:
+	/**
+	 * @return A loaded save game 
+	 **/
 	UFUNCTION()
 	static UMainSaveGame* loadSaveGame();
 	
+	/**
+	 * Save this save to disk
+	 **/
 	UFUNCTION()
 	void saveGame();
 
 };
+#endif
