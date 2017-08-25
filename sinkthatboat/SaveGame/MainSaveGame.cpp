@@ -1,6 +1,6 @@
 // 2017 . All rights reserved StB 
 
-#if WITH_EDITOR
+
 #include "sinkthatboat.h"
 #include "MainSaveGame.h"
 
@@ -22,4 +22,3 @@ UMainSaveGame* UMainSaveGame::loadSaveGame() {
 void UMainSaveGame::saveGame() {
 	UGameplayStatics::SaveGameToSlot(this, TEXT("MainUser"), 0);
 }
-#endif

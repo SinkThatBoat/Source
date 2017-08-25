@@ -1,7 +1,7 @@
 // 2017 . All rights reserved StB 
 
 #pragma once
- #if WITH_EDITOR
+ 
 
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
@@ -15,7 +15,9 @@ class SINKTHATBOAT_API UMainSaveGame : public USaveGame {
 	GENERATED_BODY()
 	
 public:
-
+	/**
+	 *	Constructor
+	 **/
 	UMainSaveGame(const FObjectInitializer & ObjectInit);
 
 	/**
@@ -38,4 +40,3 @@ public:
 	void saveGame();
 
 };
-#endif

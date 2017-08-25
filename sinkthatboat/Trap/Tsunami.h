@@ -6,11 +6,10 @@
 #include "Tsunami.generated.h"
 
 /**
- * 
+ * A simple tsunami
  */
 UCLASS()
-class SINKTHATBOAT_API ATsunami : public ATrap
-{
+class SINKTHATBOAT_API ATsunami : public ATrap {
 	GENERATED_BODY()
 	
 public:
