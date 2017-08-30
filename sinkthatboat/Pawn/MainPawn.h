@@ -41,6 +41,18 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Traps")
 	void spawnTrap(const ETrapEnum Trap, const FTransform& Transform, AActor *Tsunami);
 
+	/**
+	 *	Add points to the player
+	 **/
+	 UFUNCTION(BlueprintCallable, Server, reliable, WithValidation)
+	 void Server_addPoints(const int32& Points);
+
+	 UFUNCTION(BlueprintCallable)
+	 void won();
+
+	 UFUNCTION(BlueprintCallable, Category = "Points")
+	 int32 getScore() const;
+
 protected:
 	UFUNCTION(Server, reliable, WithValidation, BlueprintCallable)
 	void Server_setName(const FName& Name);
@@ -54,4 +66,7 @@ protected:
 	FName m_Name;
 
 
+	// Score handling
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Points", Replicated)
+	int32 m_Score;
 };

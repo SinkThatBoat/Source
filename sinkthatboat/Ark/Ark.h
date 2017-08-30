@@ -35,6 +35,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gameplay")
 	int32 _Life;
 
+	UFUNCTION(BlueprintCallable)
+	bool isSunk() const;
+
 protected:
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void displayEndGameHUD(); 

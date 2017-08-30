@@ -49,3 +49,6 @@ bool AArk::receiveDamages(int32 Damages) {
 }
 
 
+bool AArk::isSunk() const {
+	return _Life <= 0;
+}

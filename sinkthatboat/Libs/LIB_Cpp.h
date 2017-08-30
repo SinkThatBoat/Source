@@ -33,6 +33,9 @@ class SINKTHATBOAT_API ULIB_Cpp : public UBlueprintFunctionLibrary {
 	GENERATED_BODY()
 
 public:
+	/**
+	 *	Blueprint accessors
+	 **/
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
 	static float getSealCooldown();
 
@@ -66,12 +69,26 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
 	static float getTsunamiCooldown();
 
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
+	static int32 getElephantPoints();
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
+	static int32 getPandaPoints();
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
+	static int32 getChickenPoints();
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
+	static int32 getSealPoints();
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Constantes")
+	static int32 getWaitCooldown();
 
 	/**
 	* Add a record in the database
 	**/
 	UFUNCTION(BlueprintCallable, Category = "Database")
-	static void addScore(const FName Name, const int32 Time, const TArray<int32> Scores, const bool hasSinked);
+	static void addScore(const FName& Name, const int32& Score, const bool hasSinked);
 
 	UFUNCTION(BlueprintCallable, Category = "Cooldown")
 	static TArray<float> decreaseCooldown(UPARAM(ref) TArray<float> &Cooldown);

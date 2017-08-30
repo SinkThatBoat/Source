@@ -9,13 +9,21 @@
 **/
 #define DATABASE_APP		"./Release/DatabaseQuery.exe"
 
-
 /**
 *	Constantes
 **/
 
+// Points
+#define WIN_POINTS			1000
+#define ELEPHANT_POINTS		1000
+#define PANDA_POINTS		600
+#define CHICKEN_POINTS		100
+#define SEAL_POINTS			500
+#define ARK_SINKED_POINTS	1500
+
 //Server
-#define SERVER_IP			"172.16.40.38"
+#define SERVER_IP			"192.168.1.10"
+#define WAIT_COOLDOWN		5
 
 //Arks
 #define ARK_LIFE			2500
