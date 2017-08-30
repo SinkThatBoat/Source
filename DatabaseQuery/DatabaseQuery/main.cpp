@@ -1,6 +1,7 @@
 #include <winsock.h>
 #include "mysql.h"
 #include <string>
+#include <iostream>
 
 #define IP "127.0.0.1"
 #define ID "root"
@@ -19,11 +20,11 @@ int main(int argc, char *argv[]) {
 
 		// Connexion à la base de données
 		if (mysql_real_connect(mysql, IP, ID, PW, DB, 3306, NULL, 0)) {
-			
+			std::cout << "Connexion réusie";
 			// Construction de la requête
 			std::string Query =
 				"INSERT INTO tb_player "
-				"VALUES (NULL, '" + std::string(argv[1]) + "', '" + std::string(argv[2]) + ");";
+				"VALUES (NULL, '" + std::string(argv[1])+ "', " + std::string(argv[2]) + ");";
 
 			// Passage de la requête sur la base
 			mysql_query(mysql, Query.c_str());

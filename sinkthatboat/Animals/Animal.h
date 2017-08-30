@@ -71,24 +71,26 @@ public:
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
-	EPlayerEnum _OwningPlayer;
+	EPlayerEnum m_OwningPlayer;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
-		AArk *_Target;
+	AArk *m_Target;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		bool _hasDamaged;
+	bool m_hasDamaged;
 
 	UPROPERTY()
-		bool _isDead;
+	bool m_isDead;
+	
 	UPROPERTY()
-		int32 _Weight;
+	int32 m_Weight;
+	
 	UPROPERTY()
-		float _Cooldown;
+	float m_Cooldown;
 
 	UPROPERTY()
-		bool _Mud;
+	bool m_isInMud;
 
 	UPROPERTY()
-		int32 _Speed;
+	int32 m_Speed;
 };

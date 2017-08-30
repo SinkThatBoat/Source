@@ -38,10 +38,15 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool isSunk() const;
 
+	UFUNCTION(BlueprintCallable, Category = "Gameplay")
+	void OnEndGame(const int32& OurArkLife);
+
 protected:
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void displayEndGameHUD(); 
 
+	UPROPERTY()
+	bool isGameOver;
 	
 	
 };

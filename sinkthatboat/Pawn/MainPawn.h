@@ -47,6 +47,15 @@ public:
 	 UFUNCTION(BlueprintCallable, Server, reliable, WithValidation)
 	 void Server_addPoints(const int32& Points);
 
+	 /**
+	 *	Called when the game ends, and one ark sunk
+	 **/
+	 UFUNCTION(BlueprintCallable, Category = "Gameplay")
+	 void OnEndGame(const int& OurArkLife);
+	 
+	 /**
+	  *	Called when this pawn win the game
+	  **/
 	 UFUNCTION(BlueprintCallable)
 	 void won();
 

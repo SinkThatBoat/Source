@@ -6,8 +6,6 @@
 
 //Constructor
 AElephant::AElephant() {
-	_Cooldown = ELEPHANT_COOLDOWN;
-	setSpeed(ELEPHANT_SPEED);
-	_Weight = ELEPHANT_WEIGHT;
+
 }
 

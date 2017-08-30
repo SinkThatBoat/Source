@@ -7,7 +7,7 @@
 //Constructor
 ASeal::ASeal() {
 	setSpeed(SEAL_SPEED);
-	_Weight = SEAL_WEIGHT;
-	_Cooldown = SEAL_COOLDOWN;
+	m_Weight = SEAL_WEIGHT;
+	m_Cooldown = SEAL_COOLDOWN;
 }
 

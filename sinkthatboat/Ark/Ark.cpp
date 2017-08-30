@@ -12,6 +12,7 @@ AArk::AArk() {
 	//Set the ark life
 	_MaxLife = ARK_LIFE;
 	_Life    = _MaxLife;
+	isGameOver = false;
 
 }
 
@@ -34,15 +35,17 @@ void AArk::Tick(float DeltaTime) {
 *	@return Is dead
 **/
 bool AArk::receiveDamages(int32 Damages) {
-	_Life -= Damages;
+	if (!isGameOver) {
+		_Life -= Damages;
 	
-	if (_Life <= 0) {
-		_Life = 0;
+		if (_Life <= 0) {
+			_Life = 0;
 
-		// Display the end game hud
-		displayEndGameHUD();
+			// Display the end game hud
+			displayEndGameHUD();
 
-		return true;
+			return true;
+		}
 	}
 
 	return false;
@@ -51,4 +54,8 @@ bool AArk::receiveDamages(int32 Damages) {
 
 bool AArk::isSunk() const {
 	return _Life <= 0;
+}
+
+void AArk::OnEndGame(const int32& OurArkLife) {
+	isGameOver = true;
 }

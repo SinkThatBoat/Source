@@ -10,7 +10,7 @@ AAnimal::AAnimal()
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	_hasDamaged = false;
+	m_hasDamaged = false;
 }
 
 // Called when the game starts or when spawned
@@ -26,17 +26,17 @@ void AAnimal::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	//Change the speed if we're in the mud
-	setSpeed(_Mud ? _Speed / 2 : _Speed, false);
+	setSpeed(m_isInMud ? m_Speed / 2 : m_Speed, false);
 
 	//Check if we're in the mud
-	if (_Mud) {
+	if (m_isInMud) {
 		TArray<AActor*> Actors;
 		GetOverlappingActors(Actors);
 
 		for (auto& Actor : Actors) {
 			AMud *mud = Cast<AMud>(Actor);
 			if (!mud)
-				_Mud = false;
+				m_isInMud = false;
 		}
 	}
 
@@ -52,14 +52,14 @@ void AAnimal::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 // Return if the animal is dead
 bool AAnimal::isDead() const {
-	return _isDead;
+	return m_isDead;
 }
 
 //Kill the animal
 void AAnimal::kill() {
-	_hasDamaged = true;
+	m_hasDamaged = true;
 	stopWalking();
-	_isDead = true;
+	m_isDead = true;
 
 	UWorld* World = GetWorld();
 
@@ -81,7 +81,7 @@ void AAnimal::setSpeed(int32 Speed, bool applyChange) {
 	GetCharacterMovement()->MaxWalkSpeed = Speed * 70;
 
 	if(applyChange)
-		_Speed = Speed;
+		m_Speed = Speed;
 }
 
 //Destroy the animal
@@ -99,8 +99,8 @@ void AAnimal::destroyMe() {
 
 
 //Accessors
-int32 AAnimal::getWeight()   const { return _Weight; }
-float AAnimal::getCooldown() const { return _Cooldown; }
-void  AAnimal::setWeight(int32 Weight) { _Weight = Weight; }
-void  AAnimal::setCooldown(float Cooldown) { _Cooldown = Cooldown; }
-void  AAnimal::setMud(bool mud) { _Mud = mud; }
+int32 AAnimal::getWeight()   const { return m_Weight; }
+float AAnimal::getCooldown() const { return m_Cooldown; }
+void  AAnimal::setWeight(int32 Weight) { m_Weight = Weight; }
+void  AAnimal::setCooldown(float Cooldown) { m_Cooldown = Cooldown; }
+void  AAnimal::setMud(bool mud) { m_isInMud = mud; }

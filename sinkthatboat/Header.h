@@ -7,7 +7,7 @@
 /**
 *	Database options
 **/
-#define DATABASE_APP		"./Release/DatabaseQuery.exe"
+#define DATABASE_APP		"C:/PortesOuvertes/sinkthatboat/Binaries/Win64/Release/DatabaseQuery.exe"
 
 /**
 *	Constantes

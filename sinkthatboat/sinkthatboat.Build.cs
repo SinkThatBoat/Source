@@ -10,12 +10,8 @@ public class sinkthatboat : ModuleRules
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
-
-        //SQL lib added by SinkThatBoat Team (Surtout Clément qui fait tout sur ce projet)
-        PublicAdditionalLibraries.Add(@"C:/PortesOuvertes/sinkthatboat/Binaries/Win64/libmysql.lib");
-
         // Uncomment if you are using Slate UI
-        // PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
+        PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 
         // Uncomment if you are using online features
         // PrivateDependencyModuleNames.Add("OnlineSubsystem");

@@ -83,10 +83,10 @@ void ULIB_Cpp::addScore(
 	const bool hasSinked
 ) {
 #if PLATFORM_WINDOWS
-	//Call another program to add player in the db
-	const FString s = FString("start ") + DATABASE_APP + Name.ToString() + " " + FString::FromInt(Score); 
-	const std::string param(TCHAR_TO_UTF8(*s));
-	system(param.c_str());
+		//Call another program to add player in the db
+		const FString s = FString("start ") + DATABASE_APP + TEXT(" ") + Name.ToString() + TEXT(" ") + FString::FromInt(Score); 
+		const std::string param(TCHAR_TO_UTF8(*s));
+		system(param.c_str());
 #endif
 }
 

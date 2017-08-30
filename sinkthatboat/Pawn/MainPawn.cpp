@@ -75,9 +75,16 @@ void AMainPawn::Server_addPoints_Implementation(const int32& Points) {
 }
 
 void AMainPawn::won() {
+	// Add victory points
 	m_Score += WIN_POINTS;
 }
 
 int32 AMainPawn::getScore() const {
 	return m_Score;
 }
+
+void AMainPawn::OnEndGame(const int& OurArkLife) {
+	// Add the ark's life to the score
+	m_Score += OurArkLife;
+}
+
