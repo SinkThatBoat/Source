@@ -101,4 +101,7 @@ public:
 	 static void savePlayerName(const FName& Name);
 	 UFUNCTION(BlueprintCallable)
 	 static FName loadPlayerName();
+
+	 UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Pseudo")
+	 static FName getAvailablePseudo();
 };

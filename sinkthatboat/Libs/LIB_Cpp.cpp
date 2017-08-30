@@ -108,3 +108,11 @@ FName ULIB_Cpp::loadPlayerName() {
 	}
 	return TEXT("");
 }
+
+FName ULIB_Cpp::getAvailablePseudo() {
+	TArray<FName> Names = {
+		#include "Pseudos.arr"
+	};
+	const int32 RandomNum = FMath::RandRange(0, Names.Num());
+	return Names[RandomNum];
+}

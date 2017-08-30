@@ -85,6 +85,6 @@ int32 AMainPawn::getScore() const {
 
 void AMainPawn::OnEndGame(const int& OurArkLife) {
 	// Add the ark's life to the score
-	m_Score += OurArkLife;
+	m_Score += OurArkLife * ARK_LIFE_POINTS_MULTIPLICATOR;
 }
 
