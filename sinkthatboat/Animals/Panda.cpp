@@ -6,8 +6,6 @@
 
 //Constructor
 APanda::APanda() {
-	m_Weight = SEAL_WEIGHT;
-	m_Cooldown = SEAL_COOLDOWN;
-	setSpeed(SEAL_SPEED);
+	INIT_ANIMAL(PANDA);
 }
 

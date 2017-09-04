@@ -6,6 +6,6 @@
 
 //Constructor
 AElephant::AElephant() {
-
+	INIT_ANIMAL(ELEPHANT);
 }
 

@@ -110,9 +110,12 @@ FName ULIB_Cpp::loadPlayerName() {
 }
 
 FName ULIB_Cpp::getAvailablePseudo() {
-	TArray<FName> Names = {
+	// Fill the array with the file "Pseudos.arr"
+	const TArray<FName> Names = {
 		#include "Pseudos.arr"
 	};
-	const int32 RandomNum = FMath::RandRange(0, Names.Num());
+
+	// Choose a random name
+	const int32 RandomNum = FMath::RandRange(0, Names.Num() - 1);
 	return Names[RandomNum];
 }

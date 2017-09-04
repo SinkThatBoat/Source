@@ -5,8 +5,13 @@
 #include "Enums.h"
 #include "Ark/Ark.h"
 #include "Header.h"
+#include "Macros.h"
+#include "Runtime/AIModule/Classes/Tasks/AITask.h"
 #include "GameFramework/Character.h"
 #include "Animal.generated.h"
+
+
+#define INIT_ANIMAL(Name) m_Weight = Name##_WEIGHT;m_Cooldown = Name##_COOLDOWN;setSpeed( Name##_SPEED, true);
 
 
 class AMud;
@@ -91,6 +96,10 @@ protected:
 	UPROPERTY()
 	bool m_isInMud;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 m_Speed;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAITask* m_Task;
+
 };

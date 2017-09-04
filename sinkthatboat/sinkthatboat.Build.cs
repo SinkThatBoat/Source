@@ -6,7 +6,7 @@ public class sinkthatboat : ModuleRules
 {
 	public sinkthatboat(ReadOnlyTargetRules Target) : base (Target)
 	{
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Networking", "Sockets" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Networking", "Sockets", "AIModule" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

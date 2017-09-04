@@ -5,6 +5,7 @@
 
 //Constructor
 AChicken::AChicken() {
+	INIT_ANIMAL(CHICKEN);
 }
 
 
